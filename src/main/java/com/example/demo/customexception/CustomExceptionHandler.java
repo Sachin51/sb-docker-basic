@@ -41,7 +41,7 @@ public class CustomExceptionHandler extends ResponseEntityExceptionHandler{
 			MethodArgumentNotValidException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
 		List<String> details = new ArrayList<String>();
 		for (ObjectError error : ex.getBindingResult().getAllErrors()) {
-			details.add(error.getDefaultMessage());
+			details.add(error.toString());
 		}
 		
 		ErrorResponse error = new ErrorResponse("Vaidation Failed", details);

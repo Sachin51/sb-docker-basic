@@ -20,7 +20,6 @@ public class Employee {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long slNo;
 	
-	@NotBlank
 	private String empId;
 	
 	@NotBlank
@@ -42,12 +41,12 @@ public class Employee {
 	
 	private int ratingOfCompany;//use start rating in UI
 	
-	@Column(nullable = false, updatable = false)
+	@Column(nullable = true, updatable = false)
 	@Temporal(TemporalType.TIMESTAMP)
 	@CreatedDate
 	private Date createdAt;
 	
-	@Column(nullable = false, updatable = false)
+	@Column(nullable = true, updatable = false)
 	@Temporal(TemporalType.TIMESTAMP)
 	@LastModifiedDate
 	private Date updatedAt;
